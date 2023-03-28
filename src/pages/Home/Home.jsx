@@ -2,12 +2,9 @@ import { useState, useEffect } from "react";
 import CategoriesGrid from "../../components/CategoriesGrid";
 import RecipesGrid from "../../components/RecipesGrid";
 import { useNavigate } from "react-router-dom";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
 import Footer from "../../components/Footer";
 import recipeData from "../../mock-api/api-return.json"
+import { Box, Container, CssBaseline, Pagination, Typography } from "@mui/material";
 
 export default function Home() {
   // let navigate = useNavigate();
@@ -15,17 +12,21 @@ export default function Home() {
   //   let path = "recipe";
   //   navigate(path);
   // };
-
+  
   const [recipes, setRecipes] = useState([]);
-
+  const [selectedCategory, setSelectedCategory] = useState("Popular");
+  
   useEffect(() => {
     loadRecipesTest();
   }, []);
-
+  const handleCategorySelection = (categories) => {
+    setSelectedCategory(categories.title);
+    // alert("Filtering by... " + categories.title);
+  }
+  
   return (
     <div>
       <CssBaseline />
-
       <Container
         sx={{
           bgcolor: "#f7f7f7",
@@ -59,10 +60,15 @@ export default function Home() {
           </Container>
         </Box>
         <Container>
-          <CategoriesGrid/>
+          <CategoriesGrid selectedCategory={selectedCategory} handleCategorySelection={(categories) => handleCategorySelection(categories)}/>
         </Container>
         <Container>
-          {recipes.length > 0 ? <RecipesGrid recipes={recipes} title="Popular Recipes" /> : "Loading..."}
+          {recipes.length > 0 ? 
+            <div>
+              <RecipesGrid recipes={recipes} title={`${selectedCategory} Recipes`} /> 
+              {/* <Pagination count={10} /> */}
+            </div>
+            : "Loading..."}
         </Container>
         <Footer />
       </Container>

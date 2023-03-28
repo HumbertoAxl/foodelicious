@@ -1,8 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { Container } from "@mui/material";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import { AppBar, Container, Toolbar, Typography } from "@mui/material";
 import FoodBankIcon from "@mui/icons-material/FoodBank";
 import SearchBar from "./SearchBar.jsx";
 
