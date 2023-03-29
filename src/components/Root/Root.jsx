@@ -20,7 +20,7 @@ const Root = () => {
         </Toolbar>
         <SearchBar/>
       </AppBar>
-      <Container sx={{mt: 10}}>
+      <Container sx={{mt: 8}}>
         <Outlet />
       </Container>
     </>

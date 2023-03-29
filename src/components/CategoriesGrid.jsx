@@ -1,16 +1,17 @@
 import { Box, Grid, Icon, Typography } from "@mui/material";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import DinnerDiningIcon from "@mui/icons-material/DinnerDining";
-import BakeryDiningIcon from "@mui/icons-material/BakeryDining";
 import BakeryDiningOutlinedIcon from "@mui/icons-material/BakeryDiningOutlined";
 import DinnerDiningOutlinedIcon from "@mui/icons-material/DinnerDiningOutlined";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
-import OutdoorGrillIcon from "@mui/icons-material/OutdoorGrill";
 import OutdoorGrillOutlinedIcon from "@mui/icons-material/OutdoorGrillOutlined";
 import SpaOutlinedIcon from "@mui/icons-material/SpaOutlined";
+// import TocIcon from "@mui/icons-material/Toc";
 const categories = [
+  // {
+  //   title: "All Recipes",
+  //   icon: <TocIcon/>,
+  // },
   {
     title: "Popular",
     icon: <StarBorderOutlinedIcon/>,
